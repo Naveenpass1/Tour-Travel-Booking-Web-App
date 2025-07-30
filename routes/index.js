@@ -11,7 +11,7 @@ app.use(express.static(__dirname+"/public/"))
 
 const Adminroutes=require('./routes/AdminRoutes')
 app.get("/",(req,res)=>{
-  res.send("Travel server")
+  res.send("welocme to demo app this automation app for testing")
 })
 app.use('/admin',Adminroutes)
 
