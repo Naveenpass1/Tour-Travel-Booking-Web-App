@@ -23,8 +23,8 @@ jobs:
 
       - name: Restart PM2
         run: |
-          pm2 restart backend || pm2 start index.js --name backend
-          pm2 save
+          pm2 restart backend || pm2 start ~/Tour-Travel-Booking-Web-App/routes/index.js --name backend
+
 
       - name: Install frontend dependencies
         run: |
