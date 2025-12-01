@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd ~/Tour-Travel-Booking-Web-App/routes/
-          npm install
+          sudo npm install
 
       - name: Restart PM2
         run: |
