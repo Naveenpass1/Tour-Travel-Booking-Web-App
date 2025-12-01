@@ -23,24 +23,7 @@ jobs:
 
       - name: Restart PM2
         run: |
-          pm2 restart backend || pm2 start ~/Tour-Travel-Booking-Web-App/routes/index.js --name backend
+          pm2 restart backend || pm2 start index.js --name backend
+          pm2 save
 
-
-      - name: Install frontend dependencies
-        run: |
-          cd ~/Tour-Travel-Booking-Web-App/tour
-          sudo npm install
-
-      - name: Build Frontend
-        run: |
-          cd ~/Tour-Travel-Booking-Web-App/tour
-          sudo npm run build
-
-      - name: Deploy frontend build to Nginx folder
-        run: |
-          sudo rm -rf /var/www/html/*
-          sudo cp -r ~/Tour-Travel-Booking-Web-App/tour/build/* /var/www/html/
-
-      - name: Restart Nginx
-        run: |
-          sudo systemctl restart nginx
+  
