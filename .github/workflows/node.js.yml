@@ -19,11 +19,9 @@ jobs:
       - name: Install dependencies
         run: |
           cd ~/Tour-Travel-Booking-Web-App/routes/
-          sudo npm install
+          npm install
 
       - name: Restart PM2
         run: |
           pm2 restart backend || pm2 start index.js --name backend
           pm2 save
-
-  
