@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd ~/Tour-Travel-Booking-Web-App/routes/
-          npm install
+          sudo npm install
 
       - name: Restart PM2
         run: |
@@ -29,12 +29,12 @@ jobs:
       - name: Install frontend dependencies
         run: |
           cd ~/Tour-Travel-Booking-Web-App/tour
-          npm install
+          sudo npm install
 
       - name: Build Frontend
         run: |
           cd ~/Tour-Travel-Booking-Web-App/tour
-          npm run build
+          sudo npm run build
 
       - name: Deploy frontend build to Nginx folder
         run: |
