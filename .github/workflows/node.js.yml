@@ -12,16 +12,16 @@ jobs:
     steps:
       - name: Pull latest code
         run: |
-          cd ~/Tour-Travel-Booking-Web-App/routes/
+          cd ~/Tour-Travel-Booking-Web-App
           git reset --hard
           git pull origin main
 
-      - name: Install dependencies
+      - name: Install backend dependencies
         run: |
-          cd ~/Tour-Travel-Booking-Web-App/routes/
-          sudo npm install
+          cd ~/Tour-Travel-Booking-Web-App/routes
+          npm install
 
-      - name: Restart PM2
+      - name: Restart PM2 Backend
         run: |
-          pm2 restart backend || pm2 start index.js --name backend
+          pm2 restart backend || pm2 start ~/Tour-Travel-Booking-Web-App/routes/index.js --name backend
           pm2 save
