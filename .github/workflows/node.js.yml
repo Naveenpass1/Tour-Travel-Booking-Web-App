@@ -26,10 +26,4 @@ jobs:
           pm2 restart backend || pm2 start ~/Tour-Travel-Booking-Web-App/routes/index.js --name backend
           pm2 save
 
-      - name: Build & Deploy Frontend
-        run: |
-          cd ~/Tour-Travel-Booking-Web-App/tour
-          npm install --legacy-peer-deps
-          npm run build
-          sudo rsync -a --delete build/ /var/www/html/
-          sudo systemctl restart nginx
+   
